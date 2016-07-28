@@ -10,3 +10,5 @@ app.use(express.static(__dirname + '/public')); //serve static content
 app.get('/', function(req, res) {
 	return res.sendFile(__dirname + '/public/index.html');
 });
+
+app.listen(process.env.PORT || 3000);
