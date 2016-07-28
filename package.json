@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "body-parser": "latest",
-    "express": "latest",
+    "express": "latest"
   },
   "author": "Vincent Tran",
   "license": "ISC"
