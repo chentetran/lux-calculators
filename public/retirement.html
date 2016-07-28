@@ -2,8 +2,70 @@
 <html>
 <head>
 	<title>Retirement Calculator</title>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready( () => {
+
+			// Annual Income 
+			$("#annualIncomeInfo").hover( () => {
+				$("#annualIncomeInfo").html("Please enter how much your total annual income is. If you don't currently have an annual income then feel free to enter the amount you assume you'll be making or keep the average that we've set for you.");
+			}, () => {
+				$("#annualIncomeInfo").html("?");
+			});
+
+			// Age 
+			$("#ageInfo").hover( () => {
+				$("#ageInfo").html("Tell us how old you are so we can figure out how many years you have between now and retirement. Don't be shy, we won't tell anyone ;)");
+			}, () => {
+				$("#ageInfo").html("?");
+			});
+
+		});
+	</script>
 </head>
 <body>
-	
+	<form
+		method="post"
+		action="https://lux-calculators.herokuapp.com/retirement">
+
+		<h1>Retirement Calculator</h1>
+
+		<p>Annual income: 
+			<input type="number" name="annualIncome" value="65000" step="1000" min="0" required />
+			<span id="annualIncomeInfo">?</span>
+		</p>
+
+		<p>Age:
+			<input type="number" name="age" step="1" min="0" required />
+			<span id="ageInfo">?</span>
+		</p>
+
+		<p>Life expectancy:
+			<input type="number" name="lifeExpectancy" step="1" min="0" value="80" required />
+			<span id="lifeExpectancyInfo">?</span>
+		</p>
+
+<!-- 		<p>Years until retirement:
+			<input type="number" name="age" step="1" value= required />
+			<span id="ageInfo">?</span>
+		</p> -->
+
+		<p>Age of retirement:
+			<input type="number" name="ageOfRetirement" step="1" min="0" value="67" required />
+			<span id="ageOfRetirementInfo">?</span>
+		</p>
+
+		<p>Inflation (%):
+			<input type="number" name="inflation" step="1" value="2" min="0" required />
+			<span id="inflationInfo">?</span>
+		</p>
+
+		<p>Wage increase (%):
+			<input type="number" name="wageIncrease" step="1" min="0" required />
+			<span id="wageIncreaseInfo">?</span>
+		</p>
+
+	</form>
 </body>
 </html>
