@@ -19,6 +19,11 @@ app.get('/retirement', function(req, res) {
 
 app.post('/retirement', function(req, res) {
 
+	const { annualIncome, age } = req.body;
+	console.log(annualIncome)
+	console.log(age)
+
+	res.send(annualIncome);
 });
 
 app.listen(process.env.PORT || 3000);
