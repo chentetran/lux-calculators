@@ -3,64 +3,9 @@
 <head>
 	<title>Retirement Calculator</title>
 	<meta charset="UTF-8">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready( () => {
-
-			// Annual Income 
-			$("#annualIncomeInfo").hover( () => {
-				$("#annualIncomeInfo").html("Please enter how much your total annual income is. If you don't currently have an annual income then feel free to enter the amount you assume you'll be making or keep the average that we've set for you.");
-			}, () => {
-				$("#annualIncomeInfo").html("?");
-			});
-
-			// Age 
-			$("#ageInfo").hover( () => {
-				$("#ageInfo").html("Tell us how old you are so we can figure out how many years you have between now and retirement. Don't be shy, we won't tell anyone ;)");
-			}, () => {
-				$("#ageInfo").html("?");
-			});
-
-			// Life expectancy
-			$("#lifeExpectancyInfo").hover( () => {
-				$("#lifeExpectancyInfo").html("The average life expectancy is around 80 years old. Feel free to change it to see how it impacts the amount you need to save now!");
-			}, () => {
-				$("#lifeExpectancyInfo").html("?");
-			});
-
-			// Age of retirement
-			$("#ageOfRetirementInfo").hover( () => {
-				$("#ageOfRetirementInfo").html("It's hard to know when you'll be able to retire so we went ahead and guessed. Most people retire around 60-70 years old. Feel free to change the age if you want to work less or more!");
-			}, () => {
-				$("#ageOfRetirementInfo").html("?");
-			});
-
-			// Inflation
-			$("#inflationInfo").hover( () => {
-				$("#inflationInfo").html("Inflation is put in because in our economy prices are always rising as the economy grows. We cued in the average inflation rate, but if you know something that we don't feel free to change it!");
-			}, () => {
-				$("#inflationInfo").html("?");
-			});
-
-
-				// TODO: Add description for wage increase
-			// Wage increase
-			// $("#wageIncreaseInfo").hover( () => {
-			// 	$("#wageIncrease").html("");
-			// }, () => {
-			// 	$("#wageIncrease").html("?");
-			// });
-
-			// Average annual return
-			$("#avgAnnualReturnInfo").hover( () => {
-				$("#avgAnnualReturnInfo").html("If you look at historical returns over the long term the market averages around 7%. Now we can't see into the future but if history repeats itself and you invest in the long run this is the kind of return you can expect to see.");
-			}, () => {
-				$("#avgAnnualReturnInfo").html("?");
-			});
-
-		});
-	</script>
+	<link rel="stylesheet" type="text/css" href="./tooltip.css">
 </head>
+
 <body>
 	<form
 		method="post"
@@ -70,17 +15,23 @@
 
 		<p>Annual income: 
 			<input type="number" name="annualIncome" value="65000" step="1000" min="0" required />
-			<span id="annualIncomeInfo">?</span>
+			<span class="tooltip">?
+				<span class="tooltiptext">Please enter how much your total annual income is. If you don't currently have an annual income then feel free to enter the amount you assume you'll be making or keep the average that we've set for you.</span>
+			</span>
 		</p>
 
 		<p>Age:
 			<input type="number" name="age" step="1" min="0" required />
-			<span id="ageInfo">?</span>
+			<span class="tooltip">?
+				<span class="tooltiptext">Tell us how old you are so we can figure out how many years you have between now and retirement. Don't be shy, we won't tell anyone ;)</span>
+			</span>
 		</p>
 
 		<p>Life expectancy:
 			<input type="number" name="lifeExpectancy" step="1" min="0" value="80" required />
-			<span id="lifeExpectancyInfo">?</span>
+			<span class="tooltip">?
+				<span class="tooltiptext">The average life expectancy is around 80 years old. Feel free to change it to see how it impacts the amount you need to save now!</span>
+			</span>
 		</p>
 
 <!-- 		<p>Years until retirement:
@@ -90,22 +41,30 @@
 
 		<p>Age of retirement:
 			<input type="number" name="ageOfRetirement" step="1" min="0" value="67" required />
-			<span id="ageOfRetirementInfo">?</span>
+			<span class="tooltip">?
+				<span class="tooltiptext">It's hard to know when you'll be able to retire so we went ahead and guessed. Most people retire around 60-70 years old. Feel free to change the age if you want to work less or more!</span>
+			</span>
 		</p>
 
 		<p>Inflation (%):
 			<input type="number" name="inflation" step="1" value="2" min="0" required />
-			<span id="inflationInfo">?</span>
+			<span class="tooltip">?
+				<span class="tooltiptext">Inflation is put in because in our economy prices are always rising as the economy grows. We cued in the average inflation rate, but if you know something that we don't feel free to change it!</span>
+			</span>
 		</p>
 
 		<p>Wage increase (%):
 			<input type="number" name="wageIncrease" step="1" min="0" required />
-			<span id="wageIncreaseInfo">?</span>
+			<span class="tooltip">?
+				<span class="tooltiptext">n/a</span>
+			</span>
 		</p>
 
 		<p>Average annual return (%):
 			<input type="number" name="avgAnnualReturn" step="1" min="0" value="7" required />
-			<span id="avgAnnualReturnInfo">?</span>
+			<span class="tooltip">?
+				<span class="tooltiptext">If you look at historical returns over the long term the market averages around 7%. Now we can't see into the future but if history repeats itself and you invest in the long run this is the kind of return you can expect to see.</span>
+			</span>
 		</p>
 
 		<input type="submit" name="submit">
