@@ -6,19 +6,19 @@
 
 **Parameters (all numbers) (all required):**
 
-*annualIncome*: Total annual income
+- *annualIncome*: Total annual income
 
-*age*: Current age
+- *age*: Current age
 
-*lifeExpectancy*: Age expected to live until (average life expectancy is ~80)
+- *lifeExpectancy*: Age expected to live until (average life expectancy is ~80)
 
-*ageOfRetirement*: Age expected to retire (average retirement age is between 60-70)
+- *ageOfRetirement*: Age expected to retire (average retirement age is between 60-70)
 
-*inflation*: Inflation rate as a % (average inflation rate is 2%)
+- *inflation*: Inflation rate as a % (average inflation rate is 2%)
 
-*wageIncrease*: Expected wage increase rate as a % (enter 0 if no expected increase)
+- *wageIncrease*: Expected wage increase rate as a % (enter 0 if no expected increase)
 
-*avgAnnualReturn*: Expected annual return from investment as a % (historical long-term returns average around 7%)
+- *avgAnnualReturn*: Expected annual return from investment as a % (historical long-term returns average around 7%)
 
 **Example:**
 
