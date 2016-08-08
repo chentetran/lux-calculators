@@ -70,7 +70,7 @@ app.post('/retirement', function(req, res) {
 
 	// Percentage of your income
 	const percentOfIncome = 
-		(saveEachYear / annualIncome * 100).toFixed(2)
+		(saveEachYear / annualIncome * 100)
 
 	res.send({
 		earnByRetirement,
