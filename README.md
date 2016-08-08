@@ -3,6 +3,7 @@
 ## Retirement Calculator
 **POST** 
 > /retirement
+
 **Parameters (all numbers) (all required):**
 *annualIncome*: Total annual income
 *age*: Current age
@@ -14,3 +15,4 @@
 
 **Example:**
 > https://lux-calculators.herokuapp.com/retirement?annualIncome=65000&age=27&lifeExpectancy=80&ageOfRetirement=67&inflation=2&wageIncrease=1&avgAnnualReturn=7
+
