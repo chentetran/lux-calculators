@@ -89,7 +89,7 @@ app.post('/retirement', function(req, res) {
 // If so, returns true; otherwise returns false
 // Note: a false bool will return true
 function hasUndefined() {
-	for (let i = 0; i < arguments.length; i++) {
+	for (var i = 0; i < arguments.length; i++) {
 		if (arguments[i]) {
 			return true;
 		}
