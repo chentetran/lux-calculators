@@ -39,6 +39,11 @@ app.post('/retirement', function(req, res) {
 	const wageIncrease = req.body.wageIncrease;
 	const avgAnnualReturn = req.body.avgAnnualReturn;
 
+	// Check if any parameters weren't provided
+	if (hasUndefined(annualIncome,age,lifeExpectancy,ageOfRetirement,inflation,wageIncrease,avgAnnualReturn)) {
+		return res.send({error:"Missing input"})
+	}
+
 	/***** Some helper variables *****/
 	const inflationPlusWageIncrease = 
 		inflation / 100 + wageIncrease / 100;
@@ -72,12 +77,24 @@ app.post('/retirement', function(req, res) {
 	const percentOfIncome = 
 		(saveEachYear / annualIncome * 100)
 
-	res.send({
+	return res.send({
 		earnByRetirement,
 		neededInRetirementFund,
 		saveEachYear,
 		percentOfIncome
 	});
 });
+
+// Checks if any arguments are 'falsy'
+// If so, returns true; otherwise returns false
+// Note: a false bool will return true
+function hasUndefined() {
+	for (let i = 0; i < arguments.length; i++) {
+		if (arguments[i]) {
+			return true;
+		}
+	}
+	return false;
+}
 
 app.listen(process.env.PORT || 3000);
