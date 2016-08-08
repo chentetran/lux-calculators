@@ -19,15 +19,25 @@ app.get('/retirement', function(req, res) {
 
 // Route for determining how much money user needs for retirement
 app.post('/retirement', function(req, res) {
-	const {
-		annualIncome,
-		age,
-		lifeExpectancy,
-		ageOfRetirement,
-		inflation,
-		wageIncrease,
-		avgAnnualReturn
-	} = req.body;
+
+				// es7... doesn't work on heroku T.T 
+	// const {
+	// 	annualIncome,
+	// 	age,
+	// 	lifeExpectancy,
+	// 	ageOfRetirement,
+	// 	inflation,
+	// 	wageIncrease,
+	// 	avgAnnualReturn
+	// } = req.body;
+
+	const annualIncome = req.body.annualIncome;
+	const age = req.body.age;
+	const lifeExpectancy = req.body.lifeExpectancy;
+	const ageOfRetirement = req.body.ageOfRetirement;
+	const inflation = req.body.inflation;
+	const wageIncrease = req.body.wageIncrease;
+	const avgAnnualReturn = req.body.avgAnnualReturn;
 
 	/***** Some helper variables *****/
 	const inflationPlusWageIncrease = 
